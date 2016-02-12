@@ -1,7 +1,7 @@
 p <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
 p <- subset(p, Date == "1/2/2007" | Date == "2/2/2007")
 dt <- strptime(paste(p$Date, p$Time), format="%d/%m/%Y %H:%M:%S")
-png(filename="plot3.png")
+png(filename="Plot3.png")
 plot(x=dt, y=p[,"Sub_metering_1"], type="l",ylab="Energy sub metering", main="", xlab="")
 lines(x=dt, y=p[,"Sub_metering_2"], col="red")
 lines(x=dt, y=p[,"Sub_metering_3"], col="blue")
